@@ -2260,3 +2260,15 @@ a:hover {
     padding: 0 6px;
     font-size: 10.5px
 }
+
+
+
+/******* RUOO *******/
+.tag_list{
+    padding: 50px;
+}
+.tag_list li{
+    line-height: 36px;
+    font-size:  18px;
+}
+.tag_list li a

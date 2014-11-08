@@ -4,12 +4,16 @@
 
 #版权说明
 
-该版本fork自[http://www.lisijie.org/](http://www.lisijie.org/)
+该版本fork自[github.com/lisijie/goblog](http://github.com/lisijie/goblog/)
 
 由于Go语言包的原因fork后再git,再编译时会产生包路径问题
 
 #修改内容：
-
+* 评论改为多说系统
+* 左侧面板删除hover效果
+* 增加Tag列表,tag文章列表
+* 修改归档tag链接
+* 修改日期格式
 
 ##编译安装说明：
 

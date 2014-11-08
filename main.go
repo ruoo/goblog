@@ -40,8 +40,9 @@ func main() {
 	beego.Router("/article/:urlname(.+)", &blog.MainController{}, "*:Show") //别名访问
 	beego.Router("/archives", &blog.MainController{}, "*:Archives")
 	beego.Router("/archives/page/:page:int", &blog.MainController{}, "*:Archives")
-	beego.Router("/category/:name(.+?)", &blog.MainController{}, "*:Category")
-	beego.Router("/category/:name(.+?)/page/:page:int", &blog.MainController{}, "*:Category")
+	beego.Router("/tags", &blog.MainController{}, "*:TagsController")
+	beego.Router("/tag/:name(.+?)", &blog.MainController{}, "*:TagController")
+	beego.Router("/tag/:name(.+?)/page/:page:int", &blog.MainController{}, "*:TagController")
 	beego.Router("/:urlname(.+)", &blog.MainController{}, "*:Show") //别名访问
 
 	//后台路由

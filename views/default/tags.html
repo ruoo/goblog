@@ -1,0 +1,12 @@
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <ul class="tag_list">
+        {{range $k, $v := .list}}
+        <li>{{str2html $v.Name}}<a href="/tag/{{str2html $v.Name}}" itemprop="url">({{$v.Count}})</a> </li>
+        {{end}}
+    </ul>
+
+
+</div>
+

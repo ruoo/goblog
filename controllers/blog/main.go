@@ -116,8 +116,19 @@ func (this *MainController) Archives() {
 	this.display("archives")
 }
 
-//分类查看
-func (this *MainController) Category() {
+//标签主页
+func (this *MainController) TagsController(){
+    var list []*models.Tag
+	query := new(models.Tag).Query()
+	query.All(&list)
+	this.Data["list"] = list
+	this.setHeadMetas("标签")
+	this.display("tags")
+}
+
+
+//标签列表查看
+func (this *MainController) TagController() {
 	var (
 		page     int
 		pagesize int
@@ -147,6 +158,7 @@ func (this *MainController) Category() {
 	query := tagpost.Query().Filter("tagid", tag.Id).Filter("poststatus", 0)
 	count, _ = query.Count()
 	result = make(map[string][]*models.Post)
+
 	if count > 0 {
 		var tp []*models.TagPost
 		var list []*models.Post
@@ -168,6 +180,7 @@ func (this *MainController) Category() {
 		}
 	}
 
+
 	this.Data["tag"] = tag
 	this.Data["page"] = page
 	this.Data["pagesize"] = pagesize
@@ -176,5 +189,5 @@ func (this *MainController) Category() {
 	this.Data["pagebar"] = models.NewPager(int64(page), int64(count), int64(pagesize), tag.Link()).ToString()
 
 	this.setHeadMetas(tag.Name, tag.Name, tag.Name)
-	this.display("category")
+	this.display("tag")
 }
