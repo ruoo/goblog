@@ -171,6 +171,7 @@ func (this *MainController) TagController() {
 
 		new(models.Post).Query().Filter("id__in", pids).All(&list)
 
+
 		for _, v := range list {
 			year := v.Posttime.Format("2006")
 			if _, ok := result[year]; !ok {
