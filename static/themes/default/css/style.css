@@ -754,8 +754,15 @@ article h1.title {
     line-height: 35px;
     margin-bottom: 20px
 }
+article h2.title {
+    font-weight: 200;
+}
+h1.tag_title{
+    padding: 20px 0;
+    border-bottom: 2px solid #BBB;
+}
 
-article h1.title a {
+article h1.title a,article h2.title a {
     color: #666
 }
 

@@ -1,17 +1,22 @@
 <div itemscope itemtype="http://schema.org/Blog">
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="meta">
+        <div class="date">
+            <time datetime="{{.post.Posttime}}" data-updated="true" itemprop="datePublished">{{date .post.Posttime "Y/m/j"}}</time>
+        </div>
+        <!--<div class="tags"></div>-->
+    </div>
 	<h1 class="title" itemprop="name">{{.post.Title}}</h1>
+    <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
 	<div class="entry-content" itemprop="articleBody">
 	{{str2html .post.Content}}
 	</div>
 </article>
 </div>
 
+
 <section id="comment">
-    <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="{{.post.Id}}" data-title="{{.post.Title}}" data-url="{{.options.sitename}}/article/{{.post.Id}}"></div>
-    <!-- 多说评论框 end -->
-    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <div class="ds-thread" data-thread-key="article-{{.post.Id}}" data-title="{{.post.Title}}" data-url="{{.options.siteurl}}/article/{{.post.Id}}"></div>
     <script type="text/javascript">
         var duoshuoQuery = {short_name:"ruoobear"};
         (function() {
@@ -19,9 +24,26 @@
             ds.type = 'text/javascript';ds.async = true;
             ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
             ds.charset = 'UTF-8';
-            (document.getElementsByTagName('head')[0]
-                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+            (document.getElementsByTagName('head')[0]|| document.getElementsByTagName('body')[0]).appendChild(ds);
         })();
     </script>
     <!-- 多说公共JS代码 end -->
 </section>
+
+
+<script>window._bd_share_config = {
+    "common": {
+        "bdSnsKey": {},
+        "bdText": "{{.post.Title}}",
+         bdDesc : '',
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": "",
+        "bdStyle": "1",
+        "bdSize": "24"
+    },
+    "share": {},
+    "image": {"viewList": ["qzone", "tsina", "tqq", "renren", "weixin"], "viewText": "分享到：", "viewSize": "24"},
+    "selectShare": {"bdContainerClass": null, "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin"]}
+};
+with (document)0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
