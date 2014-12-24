@@ -25,6 +25,7 @@ INSERT INTO `tb_option` VALUES (7,'email','lisijie86@gmail.com');
 INSERT INTO `tb_option` VALUES (8,'theme','default');
 INSERT INTO `tb_option` VALUES (9,'timezone','8');
 INSERT INTO `tb_option` VALUES (10,'stat','');
+INSERT INTO `tb_option` VALUES (11,'duoshuo','ruoobear');
 
 #
 # Source for table tb_post
